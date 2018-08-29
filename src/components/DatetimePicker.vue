@@ -19,10 +19,10 @@
         <v-card>
             <v-card-text style="padding: 0;">
                 <v-tabs fixed-tabs v-model="activeTab">
-                    <v-tab key="calendar">
+                    <v-tab class="custom" key="calendar">
                         <v-icon>event</v-icon>
                     </v-tab>
-                    <v-tab key="timer" :disabled="!dateSelected">
+                    <v-tab class="custom" key="timer" :disabled="!dateSelected">
                         <v-icon>access_time</v-icon>
                     </v-tab>
                     <v-tab-item key="calendar">
@@ -171,9 +171,7 @@
   }
 </script>
 <style scoped>
-@media only screen and (min-width: 600px) {
-  .v-tabs__div {
-    min-width: 145px;
-  }
+.custom {
+  min-width: 145px !important;
 }
 </style>
