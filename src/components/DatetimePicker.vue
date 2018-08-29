@@ -1,10 +1,14 @@
 <template>
-    <v-dialog
-            v-model="display"
-            persistent
+    <v-menu
             lazy
+            :close-on-content-click="false"
+            v-model="display"
+            transition="scale-transition"
+            offset-y
             full-width
-            :width="width">
+            :nudge-right="40"
+            max-width="290px"
+            min-width="290px">
         <v-text-field
                 slot="activator"
                 :label="label"
@@ -45,11 +49,11 @@
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="grey lighten-1" flat @click.native="clearHandler">{{clearText}}</v-btn>
-                <v-btn color="green darken-1" flat @click="okHandler">{{okText}}</v-btn>
+                <v-btn color="default" @click.native="clearHandler">{{clearText}}</v-btn>
+                <v-btn color="primary" @click="okHandler">{{okText}}</v-btn>
             </v-card-actions>
         </v-card>
-    </v-dialog>
+    </v-menu>
 </template>
 
 <script>
@@ -166,3 +170,10 @@
     }
   }
 </script>
+<style scoped>
+@media only screen and (min-width: 600px) {
+  .v-tabs__div {
+    min-width: 145px;
+  }
+}
+</style>
