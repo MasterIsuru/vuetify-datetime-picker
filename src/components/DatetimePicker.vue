@@ -71,7 +71,7 @@
     },
     props: {
       datetime: {
-        type: Date,
+        type: String,
         default: null
       },
       label: {
