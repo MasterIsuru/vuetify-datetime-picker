@@ -138,11 +138,7 @@
           return val
         },
         set (val) {
-          if (this.$refs.timer.selectingHour) {
-            return
-          }
           this.timeSelected = true
-
           let time = moment(val, DEFAULT_TIME_FORMAT)
           let input = moment(this.selectedDatetime).hour(time.hour()).minute(time.minute()).second(0)
           this.selectedDatetime = input.toDate()
